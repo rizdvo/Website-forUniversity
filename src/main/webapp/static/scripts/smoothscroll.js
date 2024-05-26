@@ -1,5 +1,25 @@
 if (!window['jQuery']) alert('The jQuery library must be included before the smoothscroll.js file.  The plugin will not work propery.');
 
+$(function () {
+    $('.navbar-collapse a').on('click', function () {
+        $(".navbar-collapse").collapse('hide');
+    });
+
+    AOS.init({
+        disable: 'mobile',
+        duration: 800,
+        anchorPlacement: 'center-bottom'
+    });
+
+    $('.navbar a, .hero-text a').on('click', function (event) {
+        const $anchor = $(this);
+        $('html, body').stop().animate({
+            scrollTop: $($anchor.attr('href')).offset().top - 49
+        }, 1000);
+        event.preventDefault();
+    });
+});
+
 (function ($) {
     var h = $.scrollTo = function (a, b, c) {
         $(window).scrollTo(a, b, c)
