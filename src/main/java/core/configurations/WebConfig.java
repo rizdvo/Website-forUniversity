@@ -1,5 +1,6 @@
 package core.configurations;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -16,14 +17,10 @@ import org.thymeleaf.spring6.view.ThymeleafViewResolver;
 @EnableWebMvc
 @Configuration
 @ComponentScan(value = "core")
+@AllArgsConstructor
 public class WebConfig implements WebMvcConfigurer {
 
     private final ApplicationContext context;
-
-    @Autowired
-    public WebConfig(ApplicationContext context) {
-        this.context = context;
-    }
 
     @Bean
     public SpringResourceTemplateResolver templateResolver() {
@@ -60,6 +57,4 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addResourceHandler("/static/**")
                 .addResourceLocations("/static/");
     }
-
-
 }

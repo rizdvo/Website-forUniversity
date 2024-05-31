@@ -38,7 +38,7 @@ public class AppConfig {
     public DataSource dataSource() {
         HikariDataSource hikariDataSource = new HikariDataSource();
         hikariDataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        hikariDataSource.setJdbcUrl("jdbc:mysql://localhost:3306/website_for_university");
+        hikariDataSource.setJdbcUrl("jdbc:mysql://localhost:3306/db");
         hikariDataSource.setUsername("root");
         hikariDataSource.setPassword("root");
         hikariDataSource.setMaximumPoolSize(10);

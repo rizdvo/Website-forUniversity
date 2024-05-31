@@ -1,6 +1,6 @@
-CREATE SCHEMA IF NOT EXISTS website_for_university;
+CREATE SCHEMA IF NOT EXISTS db;
 
-USE website_for_university;
+USE db;
 
 CREATE TABLE IF NOT EXISTS users
 (
